@@ -19,22 +19,26 @@ router.get('/search/:term', function(req, res, next) {
         // { method: 'get', relative_url: `search/?q=${term} poa&type=event`},
       ]
     }, (fbRes) => {
-      let events = {};
-      let arrEvents = [];
+      console.log(fbRes);
+      if(fbRes){
+        let events = {};
+        let arrEvents = [];
 
-      fbRes.map((r) => {
-        const body = JSON.parse(r.body);
-        body.data.map((ev) => {
-          events[ev.name] = ev;
+        fbRes.map((r) => {
+          const body = JSON.parse(r.body);
+          body.data.map((ev) => {
+            events[ev.name] = ev;
+          });
         });
-      });
 
-      Object.keys(events).forEach((ev) => {
-        const event = events[ev];
-        arrEvents.push(event);
-      }, arrEvents)
+        Object.keys(events).forEach((ev) => {
+          const event = events[ev];
+          arrEvents.push(event);
+        }, arrEvents)
 
-      res.send(arrEvents);
+        res.send(arrEvents);
+      }
+
     });
   }else{
     res.send(cached);

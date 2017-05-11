@@ -8,8 +8,8 @@ const cors = require('cors');
 const FB = require('fb');
 const Config = require('./config.js');
 
-const index = require('./routes/index');
-const users = require('./routes/users');
+const api = require('./routes/index');
+const defaultRoute = require('./routes/default');
 
 const app = express();
 
@@ -26,32 +26,41 @@ app.use(cors({
 
 console.log(Config);
 
+// renew access_token
+// app.use((req, res, next) => {
+//   const expires = app.get('expires') || 0;
+//   const in15minutes = 900;
+//   const isExpiring = (Date.now() / 1000 | 0) > expires - (expires % in15minutes);
+//
+//   if(!app.get('expires') || isExpiring){
+//     FB.api('oauth/access_token', {
+//       client_id: Config.fb.app_id,
+//       client_secret: Config.fb.app_secret,
+//       grant_type: 'fb_exchange_token',
+//       fb_exchange_token: app.get('accessToken') || res.locals.accessToken,
+//     }, fbRes => {
+//       console.log(fbRes);
+//       if(!fbRes || fbRes.error) {
+//         console.log(!fbRes ? 'error occurred' : fbRes.error);
+//         next();
+//         return;
+//       }
+//       app.set('expires',fbRes.expires ? fbRes.expires : 0);
+//       app.set('accessToken', fbRes.access_token)
+//       next();
+//     });
+//   }
+// })
+
 app.use(function(req, res, next) {
   res.locals.accessToken = Config.fb.access_token;
   next()
-  // if(!app.get('accessToken')){
-  //   FB.api('oauth/access_token', {
-  //       client_id: Config.fb.app_id,
-  //       client_secret: '8f2a726e0ef84ce44571251dd2900faf',
-  //       grant_type: 'client_credentials'
-  //   }, function (fbRes) {
-  //       if(!fbRes || fbRes.error) {
-  //           console.log(!fbRes ? 'error occurred' : fbRes.error);
-  //           return;
-  //       }
-  //       app.set('accessToken', fbRes.access_token);
-  //       res.locals.accessToken = app.get('accessToken');
-  //       next();
-  //   });
-  // }else{
-  //   res.locals.accessToken = app.get('accessToken');
-  //   next();
-  // }
 });
 
 
 app.options('*', cors());
-app.use('/api', index);
+app.use('/', defaultRoute);
+app.use('/api', api);
 
 
 // catch 404 and forward to error handler
