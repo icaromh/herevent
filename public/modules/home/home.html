@@ -1,5 +1,43 @@
-﻿
+<div
+  map-lazy-load="{{googleMapsUrl}}"
+  layout="row"
+  ng-class="{'sidebarVisible': this.sidebar, 'has-sidebar': true}"
+>
 
-<div map-lazy-load="{{googleMapsUrl}}">
-  <ng-map center="-14.776266234528299,-50.89730339622497" zoom="3" style="height:600px"></ng-map>
+  <div class="left-bar" flex-xs="100" flex="35">
+    <div class="col-xs-12">
+      <h1 class="md-headline">{{this.place.data.name}}</h1>
+      <button class="close" style="position: absolute; right: 20px; top: 10px;"
+        ng-click="this.sidebar=false">
+        <i class="material-icons">close</i>
+      </button>
+
+      <div class="loading" ng-show="this.loading">
+        <center>
+          <md-progress-circular md-diameter="20px" md-mode="indeterminate"></md-progress-circular>
+          <span class="">Buscando eventos</span>
+        </center>
+      </div>
+
+      <div class="places" style="height: calc(100vh - 132px); overflow: auto;">
+        <md-card ng-repeat="e in this.place.events">
+          <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
+          <md-card-content>
+            <span class="md-title">{{e.name}}</span>
+            <p class="md-body-2">{{e.start_time | date : "dd/MM/y 'às' HH:mm" }}</p>
+            <p class="md-body-1 hide-description">{{ e.description | limitTo:300 }}</p>
+          </md-card-content>
+        </md-card>
+      </div> <!-- /.places  -->
+    </div>
+
+  </div>
+
+  <div flex="100" flex-xs="100">
+    <ng-map
+        center="-30.035059,-51.226507"
+        zoom="15"
+        class="app-map"
+        ></ng-map>
+  </div>
 </div>

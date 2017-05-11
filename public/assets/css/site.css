@@ -692,3 +692,23 @@ td {
                 margin-left: 0;
             }
 }
+
+
+.app-map{
+  height: calc(100vh - 70px);
+}
+
+.left-bar{
+  height: calc(100vh - 70px);
+  position: absolute;
+  z-index: 999;
+  width: 100vw;
+  background-color: #fff;
+  transform: translateX(-100%);
+  transition: transform .3s ease-in-out;
+}
+
+.sidebarVisible .left-bar{
+  left: 0;
+  transform: translateX(0);
+}
