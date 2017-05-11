@@ -20,10 +20,14 @@
       </div>
 
       <div class="places" style="height: calc(100vh - 132px); overflow: auto;">
-        <md-card ng-repeat="e in this.place.events">
+        <md-card ng-repeat="e in this.place.events | orderBy: 'start_time'">
           <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
           <md-card-content>
-            <span class="md-title">{{e.name}}</span>
+            <span class="md-title">
+              <a ng-href="{{'https://www.facebook.com/events/' + e.id}}" target="_blank">
+                {{e.name}}
+              </a>
+            </span>
             <p class="md-body-2">{{e.start_time | date : "dd/MM/y 'às' HH:mm" }}</p>
             <p class="md-body-1 hide-description">{{ e.description | limitTo:300 }}</p>
           </md-card-content>

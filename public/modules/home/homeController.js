@@ -5,7 +5,6 @@ homeController.inject = ['NgMap', '$scope', 'mapService','dialogService'];
 
 function homeController(NgMap, $scope, mapService, dialogService) {
   var vm = this;
-  var infoWindow;
   var service;
 
   $scope.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDVNt3mf6OrpUyjCftuo2Mdh_c5bZRIGkw&libraries=places";
@@ -19,7 +18,6 @@ function homeController(NgMap, $scope, mapService, dialogService) {
   vm.init();
 
   function init() {
-    getUserLocation();
     initMap();
   };
 
@@ -38,13 +36,14 @@ function homeController(NgMap, $scope, mapService, dialogService) {
   }
 
   function successGetLocation (pos) {
-    // var latLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-    var latLng = new google.maps.LatLng(-30.035059, -51.226507);
+    var latLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
     centralizaMarker(latLng);
   }
 
   function errorGetLocation (err) {
     console.warn('ERROR(' + err.code + '): ' + err.message);
+    var latLng = new google.maps.LatLng(-30.035059, -51.226507);
+    centralizaMarker(latLng);
   }
 
   function centralizaMarker(latLng){
@@ -66,9 +65,9 @@ function homeController(NgMap, $scope, mapService, dialogService) {
 
   function initMap(){
     NgMap.getMap().then(function(map) {
-      infoWindow = new google.maps.InfoWindow();
       service = new google.maps.places.PlacesService(map);
       map.addListener("idle", performSearch);
+      getUserLocation();
     });
   }
 
