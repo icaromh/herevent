@@ -24,6 +24,8 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
+console.log(Config);
+
 app.use(function(req, res, next) {
   res.locals.accessToken = Config.fb.access_token;
   next()
