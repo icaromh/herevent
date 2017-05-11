@@ -20,6 +20,9 @@
       </div>
 
       <div class="places" style="height: calc(100vh - 132px); overflow: auto;">
+        <div ng-show="this.place.events.length === 0 && !this.loading">
+          <span class="">Não encontramos nenhum evento para esse local</span>
+        </div>
         <md-card ng-repeat="e in this.place.events | orderBy: 'start_time'">
           <!-- <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out"> -->
           <md-card-content>

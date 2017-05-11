@@ -51,14 +51,14 @@ function homeController(NgMap, $scope, mapService, dialogService) {
     .getMap()
     .then(function(map) {
       map.setCenter(latLng);
-        if ($scope.hereMarker == null) {
-          criarHereEventMarker(latLng);
-        }
-        else {
-          $scope.hereMarker.setPosition(latLng);
-          $scope.hereMarker.setMap(map);
-        }
-        performSearch();
+      if ($scope.hereMarker == null) {
+        criarHereEventMarker(latLng);
+      }
+      else {
+        $scope.hereMarker.setPosition(latLng);
+        $scope.hereMarker.setMap(map);
+      }
+      performSearch();
       }
     );
   }
@@ -72,6 +72,7 @@ function homeController(NgMap, $scope, mapService, dialogService) {
   }
 
   function performSearch() {
+    clearMarkers();
     NgMap.getMap().then(function(map) {
       var request = {
           bounds: map.getBounds(),
@@ -89,8 +90,8 @@ function homeController(NgMap, $scope, mapService, dialogService) {
 
   function setMapOnAll(map) {
     NgMap.getMap().then(function(map) {
-      for (var i = 0; i < markers.length; i++) {
-        $scope.markers[i].setMap(map);
+      for (var i = 0; i < $scope.markers.length; i++) {
+        $scope.markers[i].setMap(null);
       }
     });
   }
@@ -104,8 +105,8 @@ function homeController(NgMap, $scope, mapService, dialogService) {
       var marker = new google.maps.Marker({
         map: map,
         position: place.geometry.location,
-        icon: "assets/img/eventMarker.png",
-        animation: google.maps.Animation.DROP,
+        icon: "assets/img/eventMarker2.png",
+        // animation: google.maps.Animation.DROP,
       });
 
       $scope.markers.push(marker);
@@ -134,7 +135,6 @@ function homeController(NgMap, $scope, mapService, dialogService) {
           if(response.data != undefined && response.data.length > 0){
             $scope.place.events = response.data;
           }
-          console.log($scope.place);
           $scope.loading = false;
         });
       }
