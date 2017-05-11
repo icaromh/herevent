@@ -1,0 +1,22 @@
+﻿<md-dialog aria-label="Erro" flex="60">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Erro </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="vm.cancelar()">
+                <i class="material-icons">highlight_off</i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <h3 class="m-0 p-0 m-b-10">{{vm.message}}</h3>
+
+            <p ng-bind-html="vm.exceptionMessage"></p>
+            <p ng-bind-html="vm.stackTrace"></p>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row">
+        <md-button class="md-raised md-primary md-button-small-right" ng-click="vm.cancelar()">Fechar</md-button>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,296 @@
+body {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 9pt;
+    background-color: #f6f4f5;
+}
+
+.alert-error {
+  border-color: #ebccd1;
+  background-color: #a94442;
+  color:white
+}
+.alert-error hr {
+  border-top-color: #e4b9c0;
+}
+.alert-error .alert-link {
+  color: #843534;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+.container {
+    padding: 0;
+    margin: 0;
+    width: 100% !important;
+}
+
+/* Panels */
+
+.panel {
+    background-color: #f6f4f5;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.panel-title {
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.panel-heading {
+    padding: 3px 15px;
+}
+
+.panel-default > .panel-heading {
+    background-image: -webkit-linear-gradient(top, #f1eff0 0%, #d7d7d7 100%);
+    background-image: linear-gradient(to bottom, #f1eff0 0%, #d7d7d7 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff1eff0', endColorstr='#ffd7d7d7', GradientType=0);
+}
+
+.panel.panel-default.panel-no-bordered .panel-heading {
+    border-color: #cccccc;
+}
+
+/* Panel Toggle Icon */
+
+.panel-title a {
+    background: url(img/collapse-close.png) no-repeat 0 0;
+    display: inline-block;
+    line-height: 17px;
+    padding-left: 25px;
+}
+
+.panel-title a.collapsed {
+    background-image: url(img/collapse-open.png);
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.collapse-line {
+    background: url(img/collapse-close.png) no-repeat 0 0;
+    display: inline-block;
+    line-height: 17px;
+    padding-left: 25px;
+}
+
+.panel-heading.collapsed > .collapse-line {
+    background-image: url(img/collapse-open.png);
+}
+
+/* Panel No Bordered */
+
+.panel.panel-no-bordered {
+    border: 0;
+    box-shadow: none;
+}
+
+    .panel.panel-no-bordered .panel-heading {
+        border: 1px solid transparent;
+        border-radius: 3px;
+    }
+
+.panel-group .panel-no-bordered .panel-heading + .panel-collapse .panel-body {
+    border: 0;
+}
+
+/* Table */
+
+.table-shape {
+    border: 1px solid #ddd !important;
+}
+
+.table > thead > tr > th {
+    background-image: -webkit-linear-gradient(top, #f6f4f5 0%, #e6e6e6 100%);
+    background-image: linear-gradient(to bottom, #f6f4f5 0%, #e6e6e6 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff6f4f5', endColorstr='#ffe6e6e6', GradientType=0);
+}
+
+.table-striped > tbody > tr > td,
+.table-striped > tbody > tr > th {
+    background-color: #E8EDF1;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+    background-color: #DAE4ED;
+}
+
+.table-hover > tbody > tr:hover > td,
+.table-hover > tbody > tr:hover > th {
+    background-color: #f5f5f5;
+}
+
+.table > thead > tr > th {
+    border-bottom: 1px solid #cccccc;
+}
+
+.table > tbody > tr > td {
+    border: 0;
+}
+
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+    border-top: 0px solid #cccccc;
+}
+
+/* Input */
+.form-control-custom {
+    padding-bottom: 0px;
+}
+
+.form-control {
+    height: 24px;
+    padding: 2px 5px 2px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+select.form-control {
+    height: 24px;
+    line-height: 24px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 2px;
+}
+
+textarea.form-control {
+    height: auto;
+    resize: none;
+}
+
+.input-group-addon {
+    height: 24px !important;
+    width: 0% !important;
+    padding-bottom: 4px !important;
+    padding-top: 4px !important;
+    padding-left: 4px !important;
+}
+
+.input-group .btn-sm {
+    height: 24px;
+    padding: 2px 5px 2px 5px;
+}
+/* Labels */
+.label-indicador {
+    font-size: 100%;
+    padding: .3em 1em;
+    height: 24px;
+}
+
+.glyphicon-search:before {
+    background-repeat: no-repeat;
+    background-image: url(icons/ico-search.png);
+    content: "\e000\e000\e000";
+    margin-left: -3px !important;
+    padding-right: 2px !important;
+    padding-bottom: 1px !important;
+}
+
+.glyphicon-lock:before {
+    background-repeat: no-repeat;
+    background-image: url(icons/ico-lock.png);
+    content: "\e000\e000\e000";
+    margin-left: -3px !important;
+    padding-right: 2px !important;
+    padding-bottom: 1px !important;
+}
+
+.glyphicon-file:before {
+    background-repeat: no-repeat;
+    background-image: url(icons/ico-file.png);
+    content: "\e000\e000\e000";
+    margin-left: -3px !important;
+    padding-right: 2px !important;
+    padding-bottom: 1px !important;
+}
+
+.icon-file {
+    background-repeat: no-repeat;
+    background-image: url(icons/ico-file.png);
+    margin-left: -3px !important;
+    padding-right: 2px !important;
+    padding-bottom: 1px !important;
+    height: 16px !important;
+    width: 14px !important;
+    content: "\e000\e000\e000";
+}
+
+.icon-edit {
+    background-repeat: no-repeat;
+    background-image: url(icons/ico-edit.png);
+    margin-left: -3px !important;
+    padding-right: 2px !important;
+    padding-bottom: 1px !important;
+    height: 16px !important;
+    width: 14px !important;
+    content: "\e000\e000\e000";
+}
+
+.icon-upload {
+    background-repeat: no-repeat;
+    background-image: url(icons/ico-upload.gif);
+    height: 16px !important;
+    width: 14px !important;
+    padding-right: 2px !important;
+    padding-bottom: 1px !important;
+    content: "\e000\e000\e000";
+    margin-bottom: -3px !important;
+    margin-left: -3px !important;
+    margin-right: -1px !important;
+}
+
+.glyphicon-edit:before {
+    background-repeat: no-repeat;
+    background-image: url(icons/ico-upload.png);
+    content: "\e000\e000\e000";
+    margin-left: -3px !important;
+    padding-right: 2px !important;
+    padding-bottom: 1px !important;
+}
+
+.glyphicon-remove:before {
+    background-repeat: no-repeat;
+    background-image: url(icons/ico-remove.png);
+    content: "\e000\e000\e000";
+    margin-left: -3px !important;
+    padding-right: 2px !important;
+    padding-bottom: 1px !important;
+}
+
+.btn-group-block {
+    display: block;
+}
+
+
+.well {
+  padding: 0px;
+}
+
+.thumbnail {
+
+  padding: 1px;
+  margin-bottom: 5px;
+
+}

@@ -1,0 +1,41 @@
+﻿.md-button.md-fab.md-mini {
+    line-height: 50px;
+    width: 35px;
+    height: 35px;
+}
+
+._md-datepicker-floating-label > md-datepicker-custom .md-datepicker-button {
+    float: left;
+    margin-top: -2.5px;
+    position: absolute;
+}
+
+._md-datepicker-floating-label > md-datepicker-custom .md-datepicker-input-container {
+    border: none;
+}
+
+md-datepicker-custom[disabled] .md-datepicker-input-container {
+    border-bottom-color: transparent;
+}
+
+md-autocomplete-wrap md-input-container {
+    margin-bottom: 0 !important;
+}
+
+._md-datepicker-floating-label > label:not(.md-no-float):not(.md-container-ignore) {
+    width: calc(100% - 65px);
+}
+
+md-list-item.md-line-small::before, md-list-item.md-line-small > .md-no-style::before {
+    height: auto;
+    min-height: 50px !important;
+}
+
+md-list-item.md-line-small, md-list-item.md-line-small > .md-no-style {
+    height: auto;
+    min-height: 50px !important;
+}
+
+md-checkbox.md-default-theme:not([disabled]).md-primary.md-checked .md-icon:after, md-checkbox:not([disabled]).md-primary.md-checked .md-icon:after {
+    border-color: white !important;
+}

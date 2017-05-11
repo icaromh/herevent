@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <base href="" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herevent</title>
+    <link rel="icon" href="assets/img/icon.ico">
+
+    <!-- Estilos CSS -->
+    <link href="Assets/libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="Assets/libs/bootstrap/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="Assets/libs/angular-material/angular-material.min.css" rel="stylesheet" />
+    <link href="Assets/libs/angular-material/angular-material-extends.css" rel="stylesheet" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="Assets/libs/toastr/toastr.min.css" rel="stylesheet" />
+    <link href="Assets/libs/unslider/unslider.css" rel="stylesheet" />
+    <link href="Assets/libs/unslider/unslider-dots.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Assets/libs/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="Assets/css/site.css" rel="stylesheet" />
+    <link href="Assets/libs/angular-loading-bar/loading-bar.min.css" rel="stylesheet" />
+    <link href="Assets/libs/angular-material-data-table/md-data-table.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="body-content container-padding" ng-app="hereventApp">
+        <loader></loader>
+
+        <!--TODO: Refatorar para constante app-->
+        <ng-include src="'shared/menu/menu.html'"></ng-include>
+        <ng-view></ng-view>
+    </div>
+
+    <!-- Vendors JS -->
+    <script src="Assets/libs/jquery/jquery-1.9.1.min.js"></script>
+    <script src="Assets/libs/jquery-mask/jquery.mask.min.js"></script>
+    <script src="Assets/libs/jquery-mask/jquery.mask-apply.js"></script>
+    <script src="Assets/libs/angular/angular.min.js"></script>
+    <script src="Assets/libs/angular/angular-animate.min.js"></script>
+    <script src="Assets/libs/angular/angular-aria.min.js"></script>
+    <script src="Assets/libs/angular/angular-messages.min.js"></script>
+    <script src="Assets/libs/angular/angular-resource.min.js"></script>
+    <script src="Assets/libs/angular/angular-route.min.js"></script>
+    <script src="Assets/libs/angular/angular-sanitize.min.js"></script>
+    <script src="Assets/libs/angular-locale/angular-locale_pt-br.js"></script>
+    <script src="Assets/libs/angular-material/angular-material.min.js"></script>
+    <script src="Assets/libs/angular-input-masks/angular-input-masks-standalone.min.js"></script>
+    <script src="Assets/libs/angular-br-filters/angular-br-filters.min.js"></script>
+    <script src="Assets/libs/angular-image-cropper/angular-image-cropper.js"></script>
+    <script src="Assets/libs/angular-scroll/angular-scroll.min.js"></script>
+    <script src="Assets/libs/moment/moment.min.js"></script>
+    <script src="Assets/libs/moment/moment-duration-format.js"></script>
+    <script src="Assets/libs/bootstrap/bootstrap.min.js"></script>
+    <script src="Assets/libs/toastr/toastr.min.js"></script>
+    <script src="Assets/libs/ngMask/ngMask.js"></script>
+    <script src="Assets/libs/unslider/unslider-min.js"></script>
+    <script src="Assets/libs/angular-loading-bar/loading-bar.min.js"></script>
+    <script src="Assets/libs/angular-material-data-table/md-data-table.min.js"></script>
+    <script src="Assets/libs/angular-map/ng-map.min.js"></script>
+    
+    <!-- Core -->
+    <script src="app.js"></script>
+    <script src="core/app.route.js"></script>
+    <script src="core/app.service.js"></script>
+    <script src="core/app.theming.js"></script>
+    <script src="core/app.constants.js"></script>
+
+    <!-- Components -->
+    
+    
+
+    <!-- Services -->
+    <script src="services/dialogService.js"></script>
+    <script src="services/httpService.js"></script>
+    <script src="services/mapService.js"></script>
+
+    <!-- Shared -->
+    <script src="shared/menu/menuController.js"></script>
+    <script src="shared/footer/footerController.js"></script>
+    <script src="shared/erros/errosController.js"></script>
+
+    <!-- Modules -->
+    <script src="modules/home/homeController.js"></script>
+    <script src="modules/home/placeEventDetailModalController.js"></script>
+    
+    
+</body>
+</html>

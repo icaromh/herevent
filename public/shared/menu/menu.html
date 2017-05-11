@@ -1,0 +1,27 @@
+﻿<div ng-controller="menuController" class="row">
+    <md-toolbar md-scroll-shrink layout="row" layout-wrap>
+        <div flex="40" >
+            <!--<md-button class="md-primary md-icon-button color-white m-t-10" ng-click="toggleRight()">
+                <i class="material-icons">menu</i>
+                <md-tooltip md-direction="right">Lista de Eventos</md-tooltip>
+            </md-button>-->
+        </div>
+        <div flex="60"> 
+            <img class="m-t-10 m-b-10" src="assets/img/logo-text.png" width="120" height="50"/>
+             </div>
+    </md-toolbar>
+    <md-sidenav class="md-sidenav-left md-whiteframe-4dp" md-component-id="togglerLeft">
+        <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools" ng-controller="navMenuController">
+                <span style="width: 90%;">Lista de Eventos</span>
+                <md-button ng-click="close()" class="md-primary md-icon-button color-white f-r">
+                    <i class="material-icons">close</i>
+                    <md-tooltip>FECHAR</md-tooltip>
+                </md-button>
+            </h1>
+        </md-toolbar>
+        <md-content layout-padding>
+         
+        </md-content>
+    </md-sidenav>
+</div>

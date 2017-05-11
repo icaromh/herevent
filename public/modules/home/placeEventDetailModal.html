@@ -1,0 +1,45 @@
+<md-dialog aria-label="Lista de Eventos">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Lista de Eventos - {{vm.eventos[0].place.name}} </h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="vm.cancelar()">
+                    <i class="material-icons">close</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="col-sm-12 m-t-5 container">
+                <div ng-controller="homeController" class="row">
+                    <md-list ng-repeat="e in vm.eventos" style="padding:20px">
+                         <md-toolbar>
+                            <div class="md-toolbar-tools">
+                                <h2>{{e.name}} </h2>
+                                <span flex></span>
+                            </div>
+                        </md-toolbar>
+                        <md-content style="padding:10px">
+                             <h5><b>Início:</b> {{e.start_time | date : "dd/MM/y HH:mm" }} - <b>Fim:</b> {{e.end_time | date : "dd/MM/y HH:mm" }}</h5>
+                            <h5>{{vm.eventos[0].place.location.street}} - {{vm.eventos[0].place.location.zip}}</h5>
+                            <h5>{{vm.eventos[0].place.location.city}} - {{vm.eventos[0].place.location.state}}</h5>
+                            <h6><b>Descrição:</b> {{e.description}}</h6>
+                        </md-content>
+                    
+                       
+                        
+                        <md-divider ng-if="!$last"/>
+                    </md-list>
+                </div>
+            </div>
+
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="vm.cancelar()">
+                Fechar
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
